@@ -1,10 +1,15 @@
 <?php
 function generate_password($password_length) {
+    
     $password = '';
+
     $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-=+[]{};:,.<>?/';
+
     for ($i = 0; $i < $password_length; $i++) {
-        $password .= $chars;
+        // estraggo dalla stringa $chars un solo carattere e con un indice random, poi lo concateno alla stringa $password per ogni iterazione del ciclo
+        $password .= substr($chars, rand(0, strlen($chars)), 1);
     }
+
     return $password;
 }
 
