@@ -1,9 +1,19 @@
 <?php
+function generate_password($password_length) {
+    $password = '';
+    $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-=+[]{};:,.<>?/';
+    for ($i = 0; $i < $password_length; $i++) {
+        $password .= $chars;
+    }
+    return $password;
+}
 
-if (isset($_GET['password_length'])) {
 
-    $password_length = intval($_GET['password_length']);
-    var_dump($password_length);
+if (isset($_GET['password_length']) && $_GET['password_length'] !== '') {
+
+    $password_length = $_GET['password_length'];
+
+    $password = generate_password($_GET ['password_length']);
 }
 
 ?>
@@ -50,8 +60,15 @@ if (isset($_GET['password_length'])) {
                         <button type="submit" class="btn btn-success" >Genera Password</button>
                     </div>
                 </div>
-                    
+
             </div>
+            
+            <?php if(isset($password)){ ?>
+
+                <h1><?php echo $password ?></h1>
+
+            <?php } ?>
+            
         </div>
     </div>
 
