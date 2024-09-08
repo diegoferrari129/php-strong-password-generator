@@ -40,7 +40,7 @@ if (isset($_GET['password_length']) && $_GET['password_length'] !== '') {
         <div class="row">
             <div class="col-6 offset-3">
                 <!-- card -->
-                <div class="card bg-dark mt-5 pt-5 pb-4 text-white d-flex align-items-center"> 
+                <div class="card bg-dark mt-5 pt-5 pb-4 text-white ps-5"> 
 
                     <div class="card-title">
                         <!-- titolo -->
@@ -54,26 +54,34 @@ if (isset($_GET['password_length']) && $_GET['password_length'] !== '') {
                         </h5>
                     </div>
 
-                    <div class="card-text mt-4">
-                        <!-- input utente per scegliere la lunghezza della password -->
-                        <label for="password_length">Numero di caratteri:</label>
-                        <input type="number" name="password_length" id="password_length">
+                    <div class="card-text mt-3">
+                        <div>
+                            <!-- input utente per scegliere la lunghezza della password -->
+                            <label for="password_length">Inserisci il numero di caratteri (min. 6 - max. 18)</label>
+                            <input type="number" name="password_length" id="password_length" min="6" max="18" value="6">
+                        </div>
                     </div>
 
-                    <div class="mt-4">
+                    <div class="mt-3">
                         <!-- bottone per generare la password-->
                         <button type="submit" class="btn btn-success" >Genera Password</button>
                     </div>
                 </div>
 
+                <?php if(isset($password)){ ?>
+                <div class="col-12">
+                    <div class="card bg-success text-white ps-3 py-2">
+
+                        <span>
+                            La password generata è:
+                            <h3 class="ps-5"><?php echo $password ?></h3>
+                        </span>
+
+                    </div>
+                </div>
+                <?php } ?>
+
             </div>
-            
-            <?php if(isset($password)){ ?>
-
-                <h1><?php echo $password ?></h1>
-
-            <?php } ?>
-            
         </div>
     </div>
 
