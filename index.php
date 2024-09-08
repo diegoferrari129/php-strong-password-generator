@@ -1,6 +1,10 @@
 <?php
 
-// logic here
+if (isset($_GET['password_length'])) {
+
+    $password_length = intval($_GET['password_length']);
+    var_dump($password_length);
+}
 
 ?>
 
@@ -30,7 +34,7 @@
                         </h4>
 
                         <!-- sottotitolo -->
-                        <h5 class="text-center">
+                        <h5>
                             Genera una password (abbastanza) sicura
                         </h5>
                     </div>
@@ -42,9 +46,8 @@
                     </div>
 
                     <div class="mt-4">
-                        <!-- bottone per generare la password -->
+                        <!-- bottone per generare la password-->
                         <button type="submit" class="btn btn-success" >Genera Password</button>
-
                     </div>
                 </div>
                     
