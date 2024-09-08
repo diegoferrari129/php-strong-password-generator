@@ -14,11 +14,15 @@ function generate_password($password_length) {
     return $password;
 }
 
-if (isset($_GET['password_length']) && $_GET['password_length'] >= 6 && $_GET['password_length'] !=='') {
+if (isset($_GET['password_length']) && $_GET['password_length'] >= 6 && $_GET['password_length'] <= 18) {
 
     $password_length = $_GET['password_length'];
 
     $password = generate_password($_GET ['password_length']);
+
+    // redirect
+    header('Location: password.php');
+    
 }
 
 ?>
