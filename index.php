@@ -17,7 +17,40 @@
 
     <form action="./index.php" method="get">
 
-        <!-- content here -->
+    <div class="container">
+        <div class="row">
+            <div class="col-6 offset-3">
+                <!-- card -->
+                <div class="card bg-dark mt-5 pt-5 pb-4 text-white d-flex align-items-center"> 
+
+                    <div class="card-title">
+                        <!-- titolo -->
+                        <h4 class="text-danger">
+                            Not So Strong <h3 class="fw-bold ps-2 text-success">Password Generator</h3>
+                        </h4>
+
+                        <!-- sottotitolo -->
+                        <h5 class="text-center">
+                            Genera una password (abbastanza) sicura
+                        </h5>
+                    </div>
+
+                    <div class="card-text mt-4">
+                        <!-- input utente per scegliere la lunghezza della password -->
+                        <label for="password_length">Numero di caratteri:</label>
+                        <input type="number" name="password_length" id="password_length">
+                    </div>
+
+                    <div class="mt-4">
+                        <!-- bottone per generare la password -->
+                        <button type="submit" class="btn btn-success" >Genera Password</button>
+
+                    </div>
+                </div>
+                    
+            </div>
+        </div>
+    </div>
 
     </form>
 
