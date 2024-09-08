@@ -20,8 +20,13 @@ if (isset($_GET['password_length']) && $_GET['password_length'] >= 6 && $_GET['p
 
     $password = generate_password($_GET ['password_length']);
 
+    // inizio sessione
+    session_start();
+    // salvo la password nella sessione
+    $_SESSION['password'] = $password;
+
     // redirect
-    header('Location: password.php');
+    header('Location: ./password.php');
     
 }
 

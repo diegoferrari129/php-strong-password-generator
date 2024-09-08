@@ -1,6 +1,6 @@
 <?php
 
-include __DIR__.'/functions.php';
+session_start();
 
 ?>
 
@@ -24,7 +24,7 @@ include __DIR__.'/functions.php';
 
                         <span>
                             La password generata è:
-                            <h3 class="ps-5"><?php echo $password ?></h3>
+                            <h3 class="ps-5"><?php echo $_SESSION['password']; ?></h3>
                         </span>
 
                     </div>
