@@ -14,7 +14,7 @@ session_start();
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<form action="./index.php" method="get">
     <div class="container">
         <div class="row">
             <div class="col-6 offset-3">
@@ -30,9 +30,21 @@ session_start();
                     </div>
                 </div>
 
+                <div class="col-12">
+                    <div class="mt-3">
+                        <h5> Non ti piace? Genera un'altra password!</h5>
+                        <button type="submit" class="btn btn-danger" name="destroy" >Indietro</button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
-
+</form>
+    <?php
+    if(isset($_GET['destroy'])){
+        session_destroy();
+    }
+    ?>
 </body>
 </html>
