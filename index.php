@@ -15,7 +15,7 @@ include __DIR__.'/functions.php';
 </head>
 <body>
 
-    <form action="./index.php" method="get">
+<form action="./index.php" method="get">
 
     <div class="container">
         <div class="row">
@@ -66,7 +66,7 @@ include __DIR__.'/functions.php';
         </div>
     </div>
 
-    </form>
+</form>
 
 </body>
 </html>

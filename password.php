@@ -14,37 +14,53 @@ session_start();
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<form action="./index.php" method="get">
-    <div class="container">
-        <div class="row">
-            <div class="col-6 offset-3">
 
-                <div class="col-12">
-                    <div class="card bg-success text-white ps-3 py-2 mt-5">
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card bg-dark mt-5 pt-5 pb-4 text-white ps-5"> 
 
-                        <span>
-                            La password generata è:
-                            <h3 class="ps-5"><?php echo $_SESSION['password']; ?></h3>
-                        </span>
+                <div class="card-title">
+                    <!-- titolo -->
+                    <h4 class="text-danger">
+                        Not So Strong <h3 class="fw-bold ps-2 text-success">Password Generator</h3>
+                    </h4>
 
+                    <!-- sottotitolo -->
+                    <h5>
+                        Genera una password (abbastanza) sicura
+                    </h5>
+                </div>
+
+                <div class="card-text mt-3">
+                    <div>
+                        <!-- input utente per scegliere la lunghezza della password -->
+                        <label for="password_length">Inserisci il numero di caratteri (min. 6 - max. 18)</label>
+                        <input type="number" name="password_length" id="password_length" min="6" max="18" value="6">
                     </div>
                 </div>
 
-                <div class="col-12">
-                    <div class="mt-3">
-                        <h5> Non ti piace? Genera un'altra password!</h5>
-                        <button type="submit" class="btn btn-danger" name="destroy" >Indietro</button>
-                    </div>
+                <div class="mt-3">
+                    <!-- bottone per generare la password-->
+                    <button type="submit" class="btn btn-success" >Genera Password</button>
                 </div>
-
             </div>
+
+            <div class="col-12">
+                <div class="card bg-success text-white ps-3 py-2">
+
+                    <span>
+                        La password generata è:
+                        <h3 class="ps-5"><?php echo $_SESSION['password']; ?></h3>
+                    </span>
+
+                </div>
+            </div>
+
         </div>
     </div>
-</form>
-    <?php
-    if(isset($_GET['destroy'])){
-        session_destroy();
-    }
-    ?>
+</div>
+
+
 </body>
 </html>
